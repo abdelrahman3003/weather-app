@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.search,
-                size: 23,
-                color: Colors.white,
+                size: 32,
+                color: Colors.black,
               ))
         ],
       ),

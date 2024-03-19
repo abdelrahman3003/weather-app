@@ -6,6 +6,7 @@ import 'package:weather_app/cubit/weather_cubit.dart';
 class Search extends StatelessWidget {
   Search({super.key});
   String id = 'Search';
+  TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,23 +17,31 @@ class Search extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: TextField(
+            controller: textEditingController,
             onSubmitted: (value) {
               var weathercubit = BlocProvider.of<weatherCubit>(context);
               weathercubit.getweather(value);
+
               Navigator.of(context).pop();
             },
-            decoration: const InputDecoration(
-              suffixIcon: Icon(
-                Icons.search,
+            decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: () {
+                  var weathercubit = BlocProvider.of<weatherCubit>(context);
+                  weathercubit.getweather(textEditingController.text);
+
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.search, size: 30),
                 color: Colors.blue,
               ),
               hintText: "City",
-              label: Text("Search"),
-              focusedBorder: OutlineInputBorder(
+              label: const Text("Search"),
+              focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(12)),
                 borderSide: BorderSide(color: Colors.blue, width: 2),
               ),
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 borderSide: BorderSide(color: Colors.grey, width: 2),
               ),

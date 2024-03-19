@@ -45,7 +45,7 @@ dev_dependencies:
 flutter_native_splash:
   color: "#42a5f5"
   image: images/weatherLogo2.png
-  android_gravity: center
+  android_gravity: fill
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
