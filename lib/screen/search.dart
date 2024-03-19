@@ -10,7 +10,7 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search Cityy"),
+        title: const Text("Search City"),
       ),
       body: Center(
         child: Padding(
