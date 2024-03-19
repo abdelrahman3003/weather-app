@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<weatherCubit, weatherState>(
         builder: (context, state) {
           if (state is weatherloadingState) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is weatherlSucessState) {
             return Weatherloaded(
               weatherModel: state.weatherModel,

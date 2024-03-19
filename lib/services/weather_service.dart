@@ -12,7 +12,7 @@ class WeatherService {
       return weathermodel;
     } on DioException catch (e) {
       final String messError = e.response?.data['error']['message'] ??
-          "oops  there was an Error , try again";
+          "oops  there was an Error serever , try again";
       throw Exception(messError);
     } catch (e) {
       throw Exception("oops  there was an Error , try again");
