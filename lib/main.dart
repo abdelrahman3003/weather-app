@@ -27,7 +27,7 @@ class WeatherApp extends StatelessWidget {
                       : BlocProvider.of<weatherCubit>(context)
                           .weatherModel!
                           .getmaterialcolor()),
-          home: HomePage(),
+          home: const HomePage(),
         );
       },
     );
