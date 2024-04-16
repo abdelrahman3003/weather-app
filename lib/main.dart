@@ -19,7 +19,7 @@ class WeatherApp extends StatelessWidget {
     return BlocBuilder<weatherCubit, weatherState>(
       builder: (context, state) {
         return MaterialApp(
-          debugShowCheckedModeBanner: true,
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
               primarySwatch:
                   BlocProvider.of<weatherCubit>(context).weatherModel == null
